@@ -4,6 +4,9 @@
 # - Fedora Live Spin with the light-weight XFCE Desktop Environment
 #
 # Maintainer(s):
+# - Bernd Stramm      <bernd.stramm@gmail.com>
+#
+# Inherited from livecd-xfce Maintainer(s):
 # - Rahul Sundaram    <sundaram@fedoraproject.org>
 # - Christoph Wickert <cwickert@fedoraproject.org>
 # - Kevin Fenzi       <kevin@tummy.com>
@@ -11,6 +14,8 @@
 
 %include fedora-live-base.ks
 %include fedora-live-minimization.ks
+
+repo --name=home_berndhs --baseurl=http://download.opensuse.org/repositories/home:/berndhs_Fedora15/
 
 %packages
 
@@ -49,6 +54,15 @@ setroubleshoot
 catfish
 galculator
 seahorse
+
+# Bernd's accessories
+burid
+egalite
+deeptrim
+chronicon
+souffleur
+notably
+
 
 # More Desktop stuff
 # java plugin
@@ -124,7 +138,7 @@ xfwm4-themes
 
 # dictionaries are big
 -aspell-*
-#-man-pages-*
+-man-pages-*
 
 # more fun with space saving
 -gimp-help
