@@ -1,7 +1,7 @@
 # fedora-livecd-xfce.ks
 #
 # Description:
-# - Fedora Live Spin with the light-weight XFCE Desktop Environment
+# - Moui Spin of Fedora Live Spin with the light-weight XFCE Desktop Environment
 #
 # Maintainer(s):
 # - Bernd Stramm      <bernd.stramm@gmail.com>
@@ -15,7 +15,7 @@
 %include fedora-live-base.ks
 %include fedora-live-minimization.ks
 
-repo --name=home_berndhs --baseurl=http://download.opensuse.org/repositories/home:/berndhs_Fedora15/
+repo --name=home_berndhs --baseurl=http://download.opensuse.org/repositories/home:/berndhs/Fedora_15/
 
 %packages
 
@@ -59,9 +59,17 @@ seahorse
 burid
 egalite
 deeptrim
-chronicon
 souffleur
 notably
+
+# Devel
+gcc-c++
+make
+qt-devel
+qt-mobility-devel
+qt-webkit-devel
+poppler-qt-devel
+qt-gstreamer-devel
 
 
 # More Desktop stuff
