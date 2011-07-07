@@ -6,6 +6,6 @@ Repositories:
     -   Name: handset-testing
         Url:  http://download.meego.com/testing/handset/repos/@ARCH@/packages
     -   Name: oss
-        Url:  http://repo.meego.com/MeeGo/builds/@RELEASE@/@BUILD_ID@/repos/@ARCH@/oss/packages
+        Url:  http://repo.meego.com/MeeGo/builds/@RELEASE@/latest/repos/@ARCH@/oss/packages
     -   Name: non-oss
-        Url:  http://repo.meego.com/MeeGo/builds/@RELEASE@/@BUILD_ID@/repos/@ARCH@/non-oss/packages
+        Url:  http://repo.meego.com/MeeGo/builds/@RELEASE@/latest/repos/@ARCH@/non-oss/packages
