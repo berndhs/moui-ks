@@ -1,0 +1,101 @@
+ExternalConfigs: 
+    - ex
+Default:
+    Active: True
+    Language: en_US.UTF-8
+    Keyboard: us
+    PackageArgs:
+    SaveRepos:  True
+    Timezone: America/Toronto
+    RootPass: meego
+    DefaultUser: meego
+    DefaultUserPass: meego
+    PartSize: 1900
+    FileSystem: ext3
+    PostScripts:
+        - rpm
+    Groups:
+        - MeeGo Core
+        - MeeGo Compliance
+
+CORE:
+    PartSize: 1000
+    BootloaderAppend: "quiet"
+    BootloaderTimeout: 30
+    PostScripts:
+        - cleanup
+    Groups:
+        - MeeGo X Window System
+    NoChrootScripts:
+        - buildname
+MOUI:
+    PartSize: 2200
+    Bootloader: True
+    BootloaderAppend: "quiet"
+    BootloaderTimeout: 0
+    BootloaderOptions: --test
+    Session: "/usr/bin/startmoui"
+    StartX: True
+    Groups:
+        - X for IVI
+    Kernel: kernel-adaptation-intel-automotive
+    PostScripts:
+        - prelink
+        - cleanup
+    NoChrootScripts:
+        - buildname
+    Architecture: ia32
+NETBOOK:
+    PartSize: 3000
+    Bootloader: True
+    BootloaderAppend: "quiet"
+    BootloaderTimeout: 0
+    StartX: True
+    Groups:
+        - X for Netbooks
+        - Virtual Machine Support
+        - Printing
+        - Games
+        - MeeGo Netbook Desktop
+    Kernel: kernel
+    PostScripts:
+        - prelink
+        - cleanup
+    NoChrootScripts:
+        - buildname
+    Architecture: ia32
+    
+Configurations:
+    -   Name: MOUI Development
+        Active: True
+        Baseline: "1.2.0"
+        Platform: MOUI
+        Desktop: X-IVI
+        FileName: moui-devel-ia32
+        Mic2Options: -f livecd
+        Groups:
+            - MeeGo IVI Desktop
+            - MeeGo Base Development
+            - MeeGo IVI Applications
+            - Development Tools
+        Repos:
+            - core
+            - ivi
+        ExtraPackages:
+            - mesa-libEGL
+    -   Name: MOUI
+        Active: True
+        Baseline: "1.2.0"
+        Platform: MOUI
+        Desktop: X-IVI
+        FileName: moui-ia32
+        Mic2Options: -f livecd
+        Groups:
+            - MeeGo IVI Desktop
+            - MeeGo Base Development
+            - MeeGo IVI Applications
+        Repos:
+            - core
+            - ivi
+        ExtraPackages:
+            - mesa-libEGL

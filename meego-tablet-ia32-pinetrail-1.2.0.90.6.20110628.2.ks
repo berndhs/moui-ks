@@ -15,8 +15,8 @@ bootloader --timeout=50
 desktop --autologinuser=meego  
 user --name meego  --groups audio,video --password meego 
 
-repo --name=1.2-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.6.20110628.2/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=1.2-non-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.6.20110628.2/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=1.2-oss --baseurl=http://download.meego.com/snapshots/latest/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=1.2-non-oss --baseurl=http://download.meego.com/snapshots/latest/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
 %packages
