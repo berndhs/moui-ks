@@ -36,8 +36,8 @@ MOUI:
     Session: "/usr/bin/startx"
     StartX: True
     Groups:
-        - X for Tablet
-    Kernel: kernel-adaptation-intel-automotive
+        - MeeGo Tablet
+    Kernel: kernel
     PostScripts:
         - prelink
         - cleanup
@@ -50,11 +50,10 @@ Configurations:
         Active: True
         Baseline: "1.2.0.90"
         Platform: MOUI
-        Desktop: X-Tablet
+        Desktop: MeeGo Tablet
         FileName: moui-devel-ia32
         Mic2Options: -f livecd
         Groups:
-            - MeeGo Tablet Desktop
             - MeeGo Base Development
             - MeeGo Tablet Applications
             - Development Tools
@@ -65,11 +64,10 @@ Configurations:
         Active: True
         Baseline: "1.2.0.90"
         Platform: MOUI
-        Desktop: X-Tablet
+        Desktop: MeeGo Tablet
         FileName: moui-ia32
         Mic2Options: -f livecd
         Groups:
-            - MeeGo Tablet Desktop
             - MeeGo Base Development
             - MeeGo Tablet Applications
         Repos:
