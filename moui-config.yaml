@@ -33,30 +33,11 @@ MOUI:
     Bootloader: True
     BootloaderAppend: "quiet"
     BootloaderTimeout: 0
-    Session: "/usr/bin/startmoui"
+    Session: "/usr/bin/startx"
     StartX: True
     Groups:
-        - X for IVI
+        - X for Tablet
     Kernel: kernel-adaptation-intel-automotive
-    PostScripts:
-        - prelink
-        - cleanup
-    NoChrootScripts:
-        - buildname
-    Architecture: ia32
-NETBOOK:
-    PartSize: 3000
-    Bootloader: True
-    BootloaderAppend: "quiet"
-    BootloaderTimeout: 0
-    StartX: True
-    Groups:
-        - X for Netbooks
-        - Virtual Machine Support
-        - Printing
-        - Games
-        - MeeGo Netbook Desktop
-    Kernel: kernel
     PostScripts:
         - prelink
         - cleanup
@@ -69,13 +50,13 @@ Configurations:
         Active: True
         Baseline: "1.2.0.90"
         Platform: MOUI
-        Desktop: X-IVI
+        Desktop: X-Tablet
         FileName: moui-devel-ia32
         Mic2Options: -f livecd
         Groups:
-            - MeeGo IVI Desktop
+            - MeeGo Tablet Desktop
             - MeeGo Base Development
-            - MeeGo IVI Applications
+            - MeeGo Tablet Applications
             - Development Tools
         Repos:
             - oss
@@ -84,13 +65,13 @@ Configurations:
         Active: True
         Baseline: "1.2.0.90"
         Platform: MOUI
-        Desktop: X-IVI
+        Desktop: X-Tablet
         FileName: moui-ia32
         Mic2Options: -f livecd
         Groups:
-            - MeeGo IVI Desktop
+            - MeeGo Tablet Desktop
             - MeeGo Base Development
-            - MeeGo IVI Applications
+            - MeeGo Tablet Applications
         Repos:
             - oss
             - non-oss
