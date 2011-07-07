@@ -79,8 +79,8 @@ Configurations:
             - MeeGo IVI Applications
             - Development Tools
         Repos:
-            - core
-            - ivi
+            - oss
+            - non-oss
         ExtraPackages:
             - mesa-libEGL
     -   Name: MOUI
@@ -95,7 +95,7 @@ Configurations:
             - MeeGo Base Development
             - MeeGo IVI Applications
         Repos:
-            - core
-            - ivi
+            - oss
+            - non-oss
         ExtraPackages:
             - mesa-libEGL
