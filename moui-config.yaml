@@ -33,7 +33,6 @@ MOUI:
     Bootloader: True
     BootloaderAppend: "quiet"
     BootloaderTimeout: 0
-    BootloaderOptions: --test
     Session: "/usr/bin/startmoui"
     StartX: True
     Groups:
