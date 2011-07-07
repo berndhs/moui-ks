@@ -68,7 +68,7 @@ NETBOOK:
 Configurations:
     -   Name: MOUI Development
         Active: True
-        Baseline: "1.2.0"
+        Baseline: "1.2.0.90"
         Platform: MOUI
         Desktop: X-IVI
         FileName: moui-devel-ia32
@@ -85,7 +85,7 @@ Configurations:
             - mesa-libEGL
     -   Name: MOUI
         Active: True
-        Baseline: "1.2.0"
+        Baseline: "1.2.0.90"
         Platform: MOUI
         Desktop: X-IVI
         FileName: moui-ia32

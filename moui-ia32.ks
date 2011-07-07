@@ -16,8 +16,8 @@ bootloader  --timeout=0  --append="quiet"   --test
 desktop --autologinuser=meego  --defaultdesktop=X-IVI --session="/usr/bin/startmoui"
 user --name meego  --groups audio,video --password meego 
 
-repo --name=core --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0/@BUILD_ID@/core/repos/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=ivi --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0/@BUILD_ID@/ivi/repos/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=core --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/latest/core/repos/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=ivi --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/latest/ivi/repos/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 
 %packages --
 
