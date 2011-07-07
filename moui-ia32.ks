@@ -29,7 +29,6 @@ repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/latest
 
 kernel-adaptation-intel-automotive
 
-mesa-libEGL
 %end
 
 %post
