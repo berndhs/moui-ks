@@ -80,8 +80,6 @@ Configurations:
         Repos:
             - oss
             - non-oss
-        ExtraPackages:
-            - mesa-libEGL
     -   Name: MOUI
         Active: True
         Baseline: "1.2.0.90"
@@ -96,5 +94,3 @@ Configurations:
         Repos:
             - oss
             - non-oss
-        ExtraPackages:
-            - mesa-libEGL
