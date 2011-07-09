@@ -6,6 +6,12 @@ Repositories:
     -   Name: handset-testing
         Url:  http://download.meego.com/testing/handset/repos/@ARCH@/packages
     -   Name: oss
-        Url:  http://repo.meego.com/MeeGo/builds/@RELEASE@/latest/repos/oss/@ARCH@/packages
+        Url:  http://repo.meego.com/MeeGo/releases/@RELEASE@/repos/oss/@ARCH@/packages
     -   Name: non-oss
-        Url:  http://repo.meego.com/MeeGo/builds/@RELEASE@/latest/repos/non-oss/@ARCH@/packages
+        Url:  http://repo.meego.com/MeeGo/releases/@RELEASE@/repos/non-oss/@ARCH@/packages
+    -   Name: berndhs
+        Url: http://repo.pub.meego.com/home:/earthling/meego_current_extras/
+    -   Name: berndhs-deploy
+        Url: http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/
+    -   Name: devel-xfce
+        Url: http://download.meego.com/live/devel:/xfce/Trunk/

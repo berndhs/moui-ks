@@ -1,5 +1,4 @@
-ExternalConfigs: 
-    - ex
+
 Default:
     Active: True
     Language: en_US.UTF-8
@@ -20,7 +19,6 @@ Default:
 
 CORE:
     PartSize: 1000
-    BootloaderAppend: "quiet"
     BootloaderTimeout: 30
     PostScripts:
         - cleanup
@@ -31,13 +29,12 @@ CORE:
 MOUI:
     PartSize: 2200
     Bootloader: True
-    BootloaderAppend: "quiet"
-    BootloaderTimeout: 0
-    Session: "/usr/bin/startx"
+    BootloaderTimeout: 30
+    Session: "/usr/bin/xfce4-session"
     StartX: True
     Groups:
         - MeeGo Tablet
-    Kernel: kernel
+    Kernel: kernel-adaptation-pinetrail
     PostScripts:
         - prelink
         - cleanup
@@ -48,9 +45,9 @@ MOUI:
 Configurations:
     -   Name: MOUI Development
         Active: True
-        Baseline: "1.2.0.90"
+        Baseline: "1.2.0"
         Platform: MOUI
-        Desktop: MeeGo Tablet
+        Desktop: xfdesktop
         FileName: moui-devel-ia32
         Mic2Options: -f livecd
         Groups:
@@ -60,11 +57,47 @@ Configurations:
         Repos:
             - oss
             - non-oss
+            - devel-xfce
+            - berndhs
+            - berndhs-deploy
+        ExtraPackages:
+            - installer
+            - installer-shell-b
+            - Terminal
+            - Thunar
+            - exo
+            - garcon
+            - gigolo
+            - gtk-xfce-engine
+            - libnotify1
+            - libwnck1
+            - libxfce4ui
+            - libxfce4util
+            - libxfcegui4
+            - mousepad
+            - orage
+            -  ristretto
+            - squeeze
+            - vte
+            - xfce-utils
+            - xfce4-appfinder
+            - xfce4-battery-plugin
+            - xfce4-mixer
+            - xfce4-panel
+            - xfce4-session
+            - xfce4-settings
+            - xfce4-taskmanager
+            - xfconf
+            - xfdesktop
+            - xfwm4
+            - burid
+            - deeptrim
+            - egalite
     -   Name: MOUI
         Active: True
-        Baseline: "1.2.0.90"
+        Baseline: "1.2.0"
         Platform: MOUI
-        Desktop: MeeGo Tablet
+        Desktop: xfdesktop
         FileName: moui-ia32
         Mic2Options: -f livecd
         Groups:
@@ -73,3 +106,39 @@ Configurations:
         Repos:
             - oss
             - non-oss
+            - devel-xfce
+            - berndhs
+            - berndhs-deploy
+        ExtraPackages:
+            - installer
+            - installer-shell-b
+            - Terminal
+            - Thunar
+            - exo
+            - garcon
+            - gigolo
+            - gtk-xfce-engine
+            - libnotify1
+            - libwnck1
+            - libxfce4ui
+            - libxfce4util
+            - libxfcegui4
+            - mousepad
+            - orage
+            -  ristretto
+            - squeeze
+            - vte
+            - xfce-utils
+            - xfce4-appfinder
+            - xfce4-battery-plugin
+            - xfce4-mixer
+            - xfce4-panel
+            - xfce4-session
+            - xfce4-settings
+            - xfce4-taskmanager
+            - xfconf
+            - xfdesktop
+            - xfwm4
+            - burid
+            - deeptrim
+            - egalite
