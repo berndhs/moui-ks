@@ -11,12 +11,15 @@ timezone --utc America/Toronto
 part / --size 2200 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
-bootloader  --timeout=0  --append="quiet" 
-desktop --autologinuser=meego  --defaultdesktop=MeeGo Tablet --session="/usr/bin/startx"
+bootloader  --timeout=30 
+desktop --autologinuser=meego  --defaultdesktop=xfdesktop --session="/usr/bin/xfce4-session"
 user --name meego  --groups audio,video --password meego 
 
-repo --name=oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/latest/repos/oss/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/latest/repos/non-oss/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=oss --baseurl=http://repo.meego.com/MeeGo/releases/1.2.0/repos/oss/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/releases/1.2.0/repos/non-oss/ia32/packages --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=devel-xfce --baseurl=http://download.meego.com/live/devel:/xfce/Trunk/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 
 %packages --
 
@@ -27,8 +30,40 @@ repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/latest
 @MeeGo Tablet Applications
 @Development Tools
 
-kernel
+kernel-adaptation-pinetrail
 
+installer
+installer-shell-b
+Terminal
+Thunar
+exo
+garcon
+gigolo
+gtk-xfce-engine
+libnotify1
+libwnck1
+libxfce4ui
+libxfce4util
+libxfcegui4
+mousepad
+orage
+ristretto
+squeeze
+vte
+xfce-utils
+xfce4-appfinder
+xfce4-battery-plugin
+xfce4-mixer
+xfce4-panel
+xfce4-session
+xfce4-settings
+xfce4-taskmanager
+xfconf
+xfdesktop
+xfwm4
+burid
+deeptrim
+egalite
 %end
 
 %post
