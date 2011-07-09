@@ -16,6 +16,31 @@ Default:
     Groups:
         - MeeGo Core
         - MeeGo Compliance
+    ExtraPackages:
+        - libICE
+        - libSM
+        - libX11
+        - libXau
+        - libXaw
+        - libXcomposite
+        - libXcursor
+        - libXdamage
+        - libXdmcp
+        - libXext
+        - libXfixes
+        - libXfont
+        - libXft
+        - libXi
+        - libXinerama
+        - libXmu
+        - libXpm
+        - libXrandr
+        - libXrender
+        - libXt
+        - libXtst
+        - libXv
+        - libXxf86vm
+
 
 CORE:
     PartSize: 1000
@@ -61,8 +86,7 @@ Configurations:
             - berndhs
             - berndhs-deploy
         ExtraPackages:
-            - installer
-            - installer-shell-b
+            - instalateur
             - Terminal
             - Thunar
             - exo
