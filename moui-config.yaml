@@ -3,7 +3,6 @@ Default:
     Active: True
     Language: en_US.UTF-8
     Keyboard: us
-    PackageArgs:
     SaveRepos:  True
     Timezone: America/Toronto
     RootPass: meego
@@ -16,153 +15,58 @@ Default:
     Groups:
         - MeeGo Core
         - MeeGo Compliance
+        - Minimal MeeGo X Window System
     ExtraPackages:
-        - libICE
-        - libSM
-        - libX11
-        - libXau
-        - libXaw
-        - libXcomposite
-        - libXcursor
-        - libXdamage
-        - libXdmcp
-        - libXext
-        - libXfixes
-        - libXfont
-        - libXft
-        - libXi
-        - libXinerama
-        - libXmu
-        - libXpm
-        - libXrandr
-        - libXrender
-        - libXt
-        - libXtst
-        - libXv
-        - libXxf86vm
+        - instalateur
+        - vim-enhanced
+        - vim-X11
+        - zypper
+        - sudo
+        - openssh
+        - openssh-clients
+        - openssh-server
 
 
-CORE:
-    PartSize: 1000
-    BootloaderTimeout: 30
-    PostScripts:
-        - cleanup
-    Groups:
-        - MeeGo X Window System
-    NoChrootScripts:
-        - buildname
 MOUI:
     PartSize: 2200
     Bootloader: True
     BootloaderTimeout: 30
-    Session: "/usr/bin/xfce4-session"
+    Session: "/usr/bin/mcompositor"
     StartX: True
     Groups:
         - MeeGo Tablet
-    Kernel: kernel-adaptation-pinetrail
+    Kernel: kernel
     PostScripts:
         - prelink
         - cleanup
     NoChrootScripts:
         - buildname
     Architecture: ia32
+    Repos:
+          - 1.2-oss
+          - 1.2-non-oss
+          - devel-xfce
+          - berndhs
+          - berndhs-deploy
     
 Configurations:
     -   Name: MOUI Development
         Active: True
         Baseline: "1.2.0"
         Platform: MOUI
-        Desktop: xfdesktop
+        Desktop: X-DUI
         FileName: moui-devel-ia32
         Mic2Options: -f livecd
         Groups:
             - MeeGo Base Development
             - MeeGo Tablet Applications
             - Development Tools
-        Repos:
-            - oss
-            - non-oss
-            - devel-xfce
-            - berndhs
-            - berndhs-deploy
-        ExtraPackages:
-            - instalateur
-            - Terminal
-            - Thunar
-            - exo
-            - garcon
-            - gigolo
-            - gtk-xfce-engine
-            - libnotify1
-            - libwnck1
-            - libxfce4ui
-            - libxfce4util
-            - libxfcegui4
-            - mousepad
-            - orage
-            -  ristretto
-            - squeeze
-            - vte
-            - xfce-utils
-            - xfce4-appfinder
-            - xfce4-battery-plugin
-            - xfce4-mixer
-            - xfce4-panel
-            - xfce4-session
-            - xfce4-settings
-            - xfce4-taskmanager
-            - xfconf
-            - xfdesktop
-            - xfwm4
-            - burid
-            - deeptrim
-            - egalite
+
     -   Name: MOUI
         Active: True
         Baseline: "1.2.0"
         Platform: MOUI
-        Desktop: xfdesktop
+        Desktop: X-DUI
         FileName: moui-ia32
         Mic2Options: -f livecd
-        Groups:
-            - MeeGo Base Development
-            - MeeGo Tablet Applications
-        Repos:
-            - oss
-            - non-oss
-            - devel-xfce
-            - berndhs
-            - berndhs-deploy
-        ExtraPackages:
-            - installer
-            - installer-shell-b
-            - Terminal
-            - Thunar
-            - exo
-            - garcon
-            - gigolo
-            - gtk-xfce-engine
-            - libnotify1
-            - libwnck1
-            - libxfce4ui
-            - libxfce4util
-            - libxfcegui4
-            - mousepad
-            - orage
-            -  ristretto
-            - squeeze
-            - vte
-            - xfce-utils
-            - xfce4-appfinder
-            - xfce4-battery-plugin
-            - xfce4-mixer
-            - xfce4-panel
-            - xfce4-session
-            - xfce4-settings
-            - xfce4-taskmanager
-            - xfconf
-            - xfdesktop
-            - xfwm4
-            - burid
-            - deeptrim
-            - egalite
+

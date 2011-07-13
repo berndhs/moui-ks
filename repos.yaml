@@ -9,6 +9,10 @@ Repositories:
         Url:  http://repo.meego.com/MeeGo/releases/@RELEASE@/repos/oss/@ARCH@/packages
     -   Name: non-oss
         Url:  http://repo.meego.com/MeeGo/releases/@RELEASE@/repos/non-oss/@ARCH@/packages
+    -   Name: 1.2-oss
+        Url: http://download.meego.com/snapshots/1.2.0.90.7.20110706.4/repos/oss/ia32/packages/ 
+    -   Name: 1.2-non-oss
+        Url: http://download.meego.com/snapshots/1.2.0.90.7.20110706.4/repos/non-oss/ia32/packages/
     -   Name: berndhs
         Url: http://repo.pub.meego.com/home:/earthling/meego_current_extras/
     -   Name: berndhs-deploy
