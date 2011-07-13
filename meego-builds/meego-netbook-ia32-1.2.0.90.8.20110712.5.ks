@@ -19,6 +19,9 @@ repo --name=1.2-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.8.201
 repo --name=1.2-non-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.8.20110712.5/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
+repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+
 %packages
 
 @MeeGo Base Development
@@ -33,6 +36,8 @@ repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 @Games
 
 kernel-adaptation-pinetrail
+-installer
+instalateur
 
 chromium
 adobe-release
