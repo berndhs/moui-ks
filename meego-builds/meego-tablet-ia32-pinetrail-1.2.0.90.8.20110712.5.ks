@@ -64,7 +64,7 @@ echo "DISPLAYMANAGER=\"uxlaunch\"" >> /etc/sysconfig/desktop
 echo "session=/usr/bin/mcompositor" >> /etc/sysconfig/uxlaunch
 
 
-echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
+#echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 
 
 gconftool-2 --direct \
