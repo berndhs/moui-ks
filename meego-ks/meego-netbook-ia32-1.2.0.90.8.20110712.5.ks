@@ -32,6 +32,7 @@ repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/
 @X for Netbooks
 @MeeGo Netbook
 @MeeGo Netbook Desktop
+@Development Tools
 @Printing
 @Games
 
