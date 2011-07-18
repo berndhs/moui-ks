@@ -1,0 +1,1 @@
+meego-ks/meego-netbook-ia32-1.2.0.90.8.20110712.5.ks
