@@ -19,6 +19,7 @@ repo --name=1.2-oss --baseurl=http://download.meego.com/MeeGo/snapshots/stable/1
 repo --name=1.2-non-oss --baseurl=http://download.meego.com/MeeGo/snapshots/stable/1.2.0.90/1.2.0.90.9.20110718.2/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
+
 repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 
@@ -36,7 +37,7 @@ repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/
 kernel-adaptation-pinetrail
 
 instalateur
-flash-plugin
+#flash-plugin
 sensorfw-pegatron
 -dsme
 -libdsme
