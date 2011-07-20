@@ -20,9 +20,6 @@ repo --name=oss --baseurl=http://download.meego.com/snapshots/1.2.80.8.0.2011062
 repo --name=non-oss --baseurl=http://download.meego.com/snapshots/1.2.80.8.0.20110628.2/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
-repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-
 %packages
 
 @Core
@@ -35,9 +32,6 @@ repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/
 @Tablet Applications
 
 kernel-adaptation-pinetrail
-
--installer-shell
-instalateur
 
 flash-plugin
 sensorfw-pegatron
@@ -61,7 +55,7 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
     rm -f /root/oldflashplugins.tar.gz
 fi
 
-#echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
+echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 
 
 gconftool-2 --direct \
