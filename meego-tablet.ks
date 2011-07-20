@@ -1,1 +1,1 @@
-meego-ks/meego-tablet-ia32-pinetrail-1.2.0.90.8.20110712.5.ks
+meego-ks/1.2.80/tablet-ia32-pinetrail.ks
