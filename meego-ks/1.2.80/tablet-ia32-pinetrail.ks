@@ -11,7 +11,7 @@ timezone --utc America/Los_Angeles
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
-bootloader  --timeout=0  --append="quiet"   
+bootloader  --timeout=50  --append="quiet"   
 
 desktop --autologinuser=meego  --defaultdesktop=X-DUI --session="/usr/bin/mcompositor"
 user --name meego  --groups audio,video --password meego 
@@ -19,6 +19,9 @@ user --name meego  --groups audio,video --password meego
 repo --name=oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
+
+repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 
 %packages
 
@@ -32,6 +35,8 @@ repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 @Tablet Applications
 
 kernel-adaptation-pinetrail
+-installer-shell
+instalateur
 
 flash-plugin
 sensorfw-pegatron
@@ -56,7 +61,7 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
 fi
 
 # Remove cursor from showing during startup BMC#14991
-echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
+#echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 
 # Set symlink pointing to .desktop file 
 ln -sf x-meego-tb.desktop /usr/share/xsessions/default.desktop
