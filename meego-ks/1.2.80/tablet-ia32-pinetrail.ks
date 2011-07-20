@@ -7,11 +7,11 @@
 
 lang en_US.UTF-8
 keyboard us
-timezone --utc America/Los_Angeles
+timezone --utc America/Toronto
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
-bootloader  --timeout=0  --append="quiet"   
+bootloader  --timeout=50  --append="quiet"   
 
 desktop --autologinuser=meego  --defaultdesktop=X-DUI --session="/usr/bin/mcompositor"
 user --name meego  --groups audio,video --password meego 
@@ -36,6 +36,7 @@ repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/
 
 kernel-adaptation-pinetrail
 
+-moblin-live
 -installer-shell
 instalateur
 
