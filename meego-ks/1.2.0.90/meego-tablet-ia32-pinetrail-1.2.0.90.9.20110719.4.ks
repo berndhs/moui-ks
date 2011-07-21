@@ -17,7 +17,10 @@ user --name meego  --groups audio,video --password meego
 
 repo --name=1.2-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.9.20110719.4/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=1.2-non-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.9.20110719.4/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
+repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386 --save
+
+repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 
 %packages
 
@@ -32,11 +35,15 @@ repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
 kernel-adaptation-pinetrail
 
-installer
-flash-plugin
+#installer
+instalateur
+#flash-plugin
 sensorfw-pegatron
 -dsme
 -libdsme
+
+-libGL
+mesa-libGL
 %end
 
 %post
