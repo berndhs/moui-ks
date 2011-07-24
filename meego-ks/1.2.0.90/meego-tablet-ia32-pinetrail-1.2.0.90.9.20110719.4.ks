@@ -7,7 +7,7 @@
 
 lang en_US.UTF-8
 keyboard us
-timezone --utc America/Los_Angeles
+timezone --utc America/New_York
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
@@ -40,15 +40,17 @@ kernel-adaptation-pinetrail
 instalateur
 #flash-plugin
 sensorfw-pegatron
--dsme
--libdsme
 
 -meego-ux-panels
-geuzen-ux-panels
-
+-dsme
+-libdsme
 -libGL
-mesa-libGL
 
+tzdata
+tzdata-calendar
+tzdata-timed
+geuzen-ux-panels
+mesa-libGL
 burid
 egalite
 
