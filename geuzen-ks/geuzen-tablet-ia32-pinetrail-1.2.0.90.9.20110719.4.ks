@@ -50,6 +50,8 @@ sensorfw-pegatron
 -meego-ux-panels-photos
 -meego-ux-panels-meta-tablet
 
+-generic-backgrounds
+
 -dsme
 -libdsme
 -libGL
@@ -61,9 +63,14 @@ geuzen-ux-panels-friends
 geuzen-ux-panels-photos
 geuzen-ux-panels-meta-tablet
 
+geuzen-backgrounds
+
+meego-app-calculator
+meego-app-calendar
+
 mesa-libGL
 burid
-egalite
+gedit
 
 %end
 

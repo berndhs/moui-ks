@@ -16,9 +16,10 @@ cp  ${MHOME}/${KS}  ${TMPKS}
 
 echo "using copy of ks file " 
 ls -l ${MHOME}/${KS}
-exit
-nice -5 sudo mic-image-creator \
+( nice -5 sudo mic-image-creator \
 	--config=${TMPKS} \
         --format=livecd \
+	--prefix=geuzen \
 	$PACK_MGR_OPT \
-	--cache=mic_cache 
+	--cache=mic_cache ) \
+	2>&1 | tee create.log
