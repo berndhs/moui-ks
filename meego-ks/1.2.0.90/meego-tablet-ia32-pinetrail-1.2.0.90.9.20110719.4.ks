@@ -7,7 +7,8 @@
 
 lang en_US.UTF-8
 keyboard us
-timezone --utc America/New_York
+#timezone --utc America/New_York
+timezone --utc UTC
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
@@ -27,8 +28,8 @@ repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/m
 
 @MeeGo Core
 @MeeGo X Window System
-@MeeGo Tablet
-@MeeGo Tablet Applications
+#@MeeGo Tablet
+#@MeeGo Tablet Applications
 @X for Netbooks
 @MeeGo Base Development
 @Development Tools
@@ -36,20 +37,30 @@ repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/m
 
 kernel-adaptation-pinetrail
 
-#installer
+-installer
 instalateur
 #flash-plugin
 sensorfw-pegatron
 
--meego-ux-panels
+-meego-ux-panels-music
+-meego-ux-panels-video
+-meego-ux-panels-web
+-meego-ux-panels-mytablet
+-meego-ux-panels-friends
+-meego-ux-panels-photos
+-meego-ux-panels-meta-tablet
+
 -dsme
 -libdsme
 -libGL
+geuzen-ux-panels-music
+geuzen-ux-panels-video
+geuzen-ux-panels-web
+geuzen-ux-panels-mytablet
+geuzen-ux-panels-friends
+geuzen-ux-panels-photos
+geuzen-ux-panels-meta-tablet
 
-tzdata
-tzdata-calendar
-tzdata-timed
-geuzen-ux-panels
 mesa-libGL
 burid
 egalite
