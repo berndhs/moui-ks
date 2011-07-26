@@ -56,7 +56,6 @@ meego-ux-components
 meego-ux-compositor
 meego-ux-content
 meego-ux-content-socialweb
-meego-ux-daemon
 meego-ux-media
 meego-ux-media-content
 meego-ux-settings
@@ -132,6 +131,8 @@ sensorfw-pegatron
 
 mesa-libGL
 
+geuzen-ux-daemon
+
 geuzen-ux-panels-music
 geuzen-ux-panels-video
 geuzen-ux-panels-web
@@ -203,8 +204,8 @@ sed -i s/"Cando Multi Touch Panel"/"eGalax Touchscreen"/ /etc/X11/xorg.conf.d/60
 sed -i s/Cando/eGalax/ /etc/X11/xorg.conf.d/60-egalax-mtev.conf 
 
 # Copy boot and shutdown images
-cp /usr/share/themes/1024-600-10/images/system/boot-screen.png /usr/share/plymouth/splash.png
-cp /usr/share/themes/1024-600-10/images/system/shutdown-screen.png /usr/share/plymouth/shutdown-1024x600.png
+#cp /usr/share/themes/1024-600-10/images/system/boot-screen.png /usr/share/plymouth/splash.png
+#cp /usr/share/themes/1024-600-10/images/system/shutdown-screen.png /usr/share/plymouth/shutdown-1024x600.png
 # work around for maemo6 sensor crash
 rm /usr/lib/qt4/plugins/sensors/libqtsensors_meego.so
 

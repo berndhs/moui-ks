@@ -16,10 +16,17 @@ cp  ${MHOME}/${KS}  ${TMPKS}
 
 echo "using copy of ks file " 
 ls -l ${MHOME}/${KS}
+if [ -e create.log ]; then
+  mv -f create.log create.old.log
+fi
+START_TIME=$(date --utc)
+echo  "started " $START_TIME > create.log
 ( nice -5 sudo mic-image-creator \
 	--config=${TMPKS} \
         --format=livecd \
 	--prefix=geuzen \
 	$PACK_MGR_OPT \
 	--cache=mic_cache ) \
-	2>&1 | tee create.log
+	2>&1 | tee -a create.log
+FINISH_TIME=$(date --utc)
+echo  "finished " $FINISH_TIME >> create.log
