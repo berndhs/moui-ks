@@ -10,11 +10,11 @@ keyboard us
 #timezone --utc America/New_York
 timezone --utc UTC
 part / --size 3000 --ondisk sda --fstype=ext3
-rootpw meego 
+rootpw live 
 xconfig --startxonboot
 bootloader --timeout=50 --append="quiet"
 desktop --autologinuser=meego  
-user --name meego  --groups audio,video --password meego 
+user --name meego  --groups audio,video --password live 
 
 repo --name=1.2-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.9.20110719.4/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=1.2-non-oss --baseurl=http://download.meego.com/snapshots/1.2.0.90.9.20110719.4/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
@@ -28,12 +28,87 @@ repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/m
 
 @MeeGo Core
 @MeeGo X Window System
-@MeeGo Tablet
-#@MeeGo Tablet Applications
+#@MeeGo Tablet
+
+# tablet stuff
+bluetooth-qt
+buteo-sync-plugin-google
+connman-qt
+contextkit-meego
+contextkit-meego-battery-upower
+fuse-libs
+gst-plugins-bad-free
+gst-plugins-base
+gst-plugins-farsight
+libcmtspeech-ifx
+libical
+libmeegotouch
+libmeegouxsharingclient
+libmeegouxsharingserviceplugin
+libqmfclient1
+libqmfmessageserver1
+libqmfutil1
+libsocialweb-keys
+meego-handset-sound-theme
+meego-qml-launcher
+meego-ux-appgrid
+meego-ux-components
+meego-ux-compositor
+meego-ux-content
+meego-ux-content-socialweb
+meego-ux-daemon
+meego-ux-media
+meego-ux-media-content
+meego-ux-settings
+meego-ux-settings-libsettings
+meego-ux-settings-socialweb
+meego-ux-sharing
+meego-ux-sharing-email
+meego-ux-sharing-qml
+meego-ux-sharing-socialweb
+meego-ux-theme
+meego-ux-translations-de
+meego-ux-translations-el
+meego-ux-translations-en_GB
+meego-ux-translations-en_US
+meego-ux-translations-es
+meego-ux-translations-fi
+meego-ux-translations-fr
+meego-ux-translations-it
+meego-ux-translations-ja
+meego-ux-translations-ko
+meego-ux-translations-nl
+meego-ux-translations-pl
+meego-ux-translations-pt_BR
+meego-ux-translations-ru
+meego-ux-translations-sv
+meego-ux-translations-zh_CN
+meego-ux-translations-zh_TW
+meego-ux-user-skel
+meegotouch-feedback
+meegotouch-feedbackreactionmaps
+meegotouch-inputmethodengine
+meegotouch-inputmethodkeyboard
+meegotouch-theme
+meegotouch-theme-meego
+mlite
+mtdev
+orientation-contextkit-sensor
+qml-gesturearea
+qt-qmlviewer
+qtgst-qmlsink
+tablet-target-config
+telepathy-farstream
+telepathy-qt4-yell
+tumbler
+# end tablet stuff
+@MeeGo Tablet Applications
 @X for Netbooks
 @MeeGo Base Development
 @Development Tools
 @Pinetrail Support
+
+ImageMagick
 
 kernel-adaptation-pinetrail
 
@@ -41,6 +116,7 @@ kernel-adaptation-pinetrail
 instalateur
 #flash-plugin
 sensorfw-pegatron
+
 
 -meego-ux-panels-music
 -meego-ux-panels-video
@@ -50,11 +126,12 @@ sensorfw-pegatron
 -meego-ux-panels-photos
 -meego-ux-panels-meta-tablet
 
--generic-backgrounds
-
 -dsme
 -libdsme
 -libGL
+
+mesa-libGL
+
 geuzen-ux-panels-music
 geuzen-ux-panels-video
 geuzen-ux-panels-web
@@ -63,14 +140,18 @@ geuzen-ux-panels-friends
 geuzen-ux-panels-photos
 geuzen-ux-panels-meta-tablet
 
+-generic-backgrounds
+-netbook-backgrounds
+-netbook-desktop-backgrounds
+-desktop-backgrounds-basic
+
 geuzen-backgrounds
 
-meego-app-calculator
-meego-app-calendar
-
-mesa-libGL
 burid
+zypper
+vim
 gedit
+deeptrim
 
 %end
 
@@ -93,6 +174,7 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
 fi
 
 echo "DISPLAYMANAGER=\"uxlaunch\"" >> /etc/sysconfig/desktop
+echo "user=meego" >> /etc/sysconfig/uxlaunch
 echo "session=/usr/bin/mcompositor" >> /etc/sysconfig/uxlaunch
 
 
