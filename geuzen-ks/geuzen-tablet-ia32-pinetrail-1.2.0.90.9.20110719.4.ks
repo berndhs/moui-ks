@@ -154,7 +154,6 @@ geuzen-backgrounds
 
 burid
 zypper
-vim
 gedit
 
 %end
