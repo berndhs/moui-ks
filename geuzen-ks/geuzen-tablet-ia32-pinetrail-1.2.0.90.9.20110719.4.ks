@@ -152,7 +152,6 @@ burid
 zypper
 vim
 gedit
-deeptrim
 
 %end
 
@@ -219,6 +218,8 @@ rm /usr/lib/gstreamer-0.10/libgstcamerabin.so
 if [ -n "$IMG_NAME" ]; then
     echo "BUILD: $IMG_NAME" >> $INSTALL_ROOT/etc/meego-release
 fi
+cp -f $INSTALL_ROOT/usr/share/backgrounds/images/bootsplash.jpg \
+	$INSTALL_ROOT/boot/extlinux/splash.jpg
 
 
 %end
