@@ -23,6 +23,7 @@ repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386 --save
 repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/current/ --save --source
 
 %packages
 
@@ -65,7 +66,6 @@ meego-ux-sharing
 meego-ux-sharing-email
 meego-ux-sharing-qml
 meego-ux-sharing-socialweb
-meego-ux-theme
 meego-ux-translations-de
 meego-ux-translations-el
 meego-ux-translations-en_GB
@@ -116,6 +116,13 @@ instalateur
 #flash-plugin
 sensorfw-pegatron
 
+-dsme
+-libdsme
+-libGL
+
+mesa-libGL
+
+-meego-ux-daemon
 
 -meego-ux-panels-music
 -meego-ux-panels-video
@@ -124,12 +131,6 @@ sensorfw-pegatron
 -meego-ux-panels-friends
 -meego-ux-panels-photos
 -meego-ux-panels-meta-tablet
-
--dsme
--libdsme
--libGL
-
-mesa-libGL
 
 geuzen-ux-daemon
 
@@ -140,6 +141,9 @@ geuzen-ux-panels-mytablet
 geuzen-ux-panels-friends
 geuzen-ux-panels-photos
 geuzen-ux-panels-meta-tablet
+
+-meego-ux-theme
+geuzen-ux-theme
 
 -generic-backgrounds
 -netbook-backgrounds
