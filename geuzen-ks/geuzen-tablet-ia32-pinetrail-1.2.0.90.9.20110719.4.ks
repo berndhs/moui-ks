@@ -124,6 +124,7 @@ mesa-libGL
 
 -meego-ux-daemon
 
+-meego-ux-panels-testpanel
 -meego-ux-panels-music
 -meego-ux-panels-video
 -meego-ux-panels-web

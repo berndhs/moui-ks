@@ -11,30 +11,32 @@ timezone --utc America/Los_Angeles
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
-bootloader  --timeout=0  --append="quiet"   
-
-desktop --autologinuser=meego  --defaultdesktop=X-DUI --session="/usr/bin/mcompositor"
+bootloader --timeout=0 --append="quiet"
+desktop --autologinuser=meego  
 user --name meego  --groups audio,video --password meego 
 
-repo --name=oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=1.2-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=1.2-non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
 %packages
 
-@Core
-@Compliance
-@Common User Interface
-@Console Tools
-@Tablet
+@MeeGo Core
+@MeeGo X Window System
+@MeeGo Tablet
+@MeeGo Tablet Applications
+@X for Netbooks
+@MeeGo Base Development
+@Development Tools
 @Pinetrail Support
-@Samples and Demos
-@Tablet Applications
 
 kernel-adaptation-pinetrail
 
+installer
 flash-plugin
 sensorfw-pegatron
+-dsme
+-libdsme
 %end
 
 %post
@@ -54,6 +56,10 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
     sh /usr/lib/flash-plugin/setup install
     rm -f /root/oldflashplugins.tar.gz
 fi
+
+echo "DISPLAYMANAGER=\"uxlaunch\"" >> /etc/sysconfig/desktop
+echo "session=/usr/bin/mcompositor" >> /etc/sysconfig/uxlaunch
+
 
 echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 

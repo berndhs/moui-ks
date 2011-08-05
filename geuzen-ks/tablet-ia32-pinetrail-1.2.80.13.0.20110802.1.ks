@@ -6,19 +6,25 @@
 # 
 
 lang en_US.UTF-8
-keyboard us
-timezone --utc America/Los_Angeles
+keyboard de
+timezone --utc UTC
 part / --size 3000 --ondisk sda --fstype=ext3
-rootpw meego 
+rootpw live 
 xconfig --startxonboot
-bootloader  --timeout=0  --append="quiet"   
+bootloader  --timeout=30  
+#--append="quiet"   
 
 desktop --autologinuser=meego  --defaultdesktop=X-DUI --session="/usr/bin/mcompositor"
 user --name meego  --groups audio,video --password meego 
 
-repo --name=oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.80/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.80/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
+
+repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source
+#repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source 
+#repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/meego_current_Core/ --save --debuginfo --source 
+#repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/MeeGo/current/ --save --source
 
 %packages
 
@@ -33,8 +39,49 @@ repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
 kernel-adaptation-pinetrail
 
+#-installer
+#instalateur
+
 flash-plugin
 sensorfw-pegatron
+
+
+#-meego-ux-daemon
+
+#-meego-ux-panels-testpanel
+#-meego-ux-panels-music
+#-meego-ux-panels-video
+#-meego-ux-panels-web
+#-meego-ux-panels-mytablet
+#-meego-ux-panels-friends
+#-meego-ux-panels-photos
+#-meego-ux-panels-meta-tablet
+
+#geuzen-ux-daemon
+
+#geuzen-ux-panels-music
+#geuzen-ux-panels-video
+#geuzen-ux-panels-web
+#geuzen-ux-panels-mytablet
+#geuzen-ux-panels-friends
+#geuzen-ux-panels-photos
+#geuzen-ux-panels-meta-tablet
+#
+#-meego-ux-theme
+#geuzen-ux-theme
+
+#-generic-backgrounds
+#-netbook-backgrounds
+#-netbook-desktop-backgrounds
+#-desktop-backgrounds-basic
+
+#geuzen-backgrounds
+
+#burid
+zypper
+gedit
+
+
 %end
 
 %post
@@ -55,8 +102,11 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
     rm -f /root/oldflashplugins.tar.gz
 fi
 
-echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
+# Remove cursor from showing during startup BMC#14991
+#echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 
+# Set symlink pointing to .desktop file 
+ln -sf x-meego-tb.desktop /usr/share/xsessions/default.desktop
 
 gconftool-2 --direct \
   --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \

@@ -55,8 +55,11 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
     rm -f /root/oldflashplugins.tar.gz
 fi
 
+# Remove cursor from showing during startup BMC#14991
 echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 
+# Set symlink pointing to .desktop file 
+ln -sf x-meego-tb.desktop /usr/share/xsessions/default.desktop
 
 gconftool-2 --direct \
   --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \

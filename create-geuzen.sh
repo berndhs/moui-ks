@@ -9,10 +9,10 @@ else
   PACK_MGR_OPT=""
 fi
 
-#BUILD_ID="1.2.80.8.0.20110628.2"
-#sed s/@BUILD_ID@/$BUILD_ID/ ${MHOME}/${KS} > ${TMPKS}
+BUILD_ID="1.2.0.90.11.20110802.2"
+sed s/@BUILD_ID@/$BUILD_ID/ ${MHOME}/${KS} > ${TMPKS}
 
-cp  ${MHOME}/${KS}  ${TMPKS}
+#cp  ${MHOME}/${KS}  ${TMPKS}
 
 echo "using copy of ks file " 
 ls -l ${MHOME}/${KS}

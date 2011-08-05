@@ -11,30 +11,75 @@ timezone --utc America/Los_Angeles
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
-bootloader  --timeout=0  --append="quiet"   
-
-desktop --autologinuser=meego  --defaultdesktop=X-DUI --session="/usr/bin/mcompositor"
+bootloader --timeout=0 --append="quiet"
+desktop --autologinuser=meego  
 user --name meego  --groups audio,video --password meego 
 
-repo --name=oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/trunk/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=1.2-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/@BUILD_ID@/repos/oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=1.2-non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
+
+repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
+repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/MeeGo/current/ --save --source
 
 %packages
 
-@Core
-@Compliance
-@Common User Interface
-@Console Tools
-@Tablet
+@MeeGo Core
+@MeeGo X Window System
+@MeeGo Tablet
+@MeeGo Tablet Applications
+@X for Netbooks
+@MeeGo Base Development
+@Development Tools
 @Pinetrail Support
-@Samples and Demos
-@Tablet Applications
 
 kernel-adaptation-pinetrail
 
+-installer
+instalateur
+
 flash-plugin
 sensorfw-pegatron
+-dsme
+-libdsme
+
+-meego-ux-daemon
+
+-meego-ux-panels-testpanel
+-meego-ux-panels-music
+-meego-ux-panels-video
+-meego-ux-panels-web
+-meego-ux-panels-mytablet
+-meego-ux-panels-friends
+-meego-ux-panels-photos
+-meego-ux-panels-meta-tablet
+
+geuzen-ux-daemon
+
+geuzen-ux-panels-music
+geuzen-ux-panels-video
+geuzen-ux-panels-web
+geuzen-ux-panels-mytablet
+geuzen-ux-panels-friends
+geuzen-ux-panels-photos
+geuzen-ux-panels-meta-tablet
+
+-meego-ux-theme
+geuzen-ux-theme
+
+-generic-backgrounds
+-netbook-backgrounds
+-netbook-desktop-backgrounds
+-desktop-backgrounds-basic
+
+geuzen-backgrounds
+
+burid
+zypper
+gedit
+
 %end
 
 %post
@@ -55,7 +100,11 @@ if [ -f /usr/lib/flash-plugin/setup ]; then
     rm -f /root/oldflashplugins.tar.gz
 fi
 
-echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
+echo "DISPLAYMANAGER=\"uxlaunch\"" >> /etc/sysconfig/desktop
+echo "session=/usr/bin/mcompositor" >> /etc/sysconfig/uxlaunch
+
+
+#echo "xopts=-nocursor" >> /etc/sysconfig/uxlaunch
 
 
 gconftool-2 --direct \
