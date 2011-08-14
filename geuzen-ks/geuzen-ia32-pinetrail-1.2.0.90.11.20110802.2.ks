@@ -6,8 +6,8 @@
 # 
 
 lang en_US.UTF-8
-keyboard us
-timezone --utc America/Los_Angeles
+keyboard de
+timezone --utc UTC
 part / --size 3000 --ondisk sda --fstype=ext3
 rootpw meego 
 xconfig --startxonboot
@@ -19,10 +19,10 @@ repo --name=1.2-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/@BUILD
 repo --name=1.2-non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.0.90/@BUILD_ID@/repos/non-oss/ia32/packages/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
+repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/MeeGo/current/ --save --source
 repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
 repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/meego_current_Core/ --save --debuginfo --source --gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-meego
-repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/MeeGo/current/ --save --source
 
 %packages
 
@@ -61,6 +61,7 @@ geuzen-ux-daemon
 geuzen-ux-panels-music
 geuzen-ux-panels-video
 geuzen-ux-panels-web
+geuzen-ux-panels-ifcfg
 geuzen-ux-panels-mytablet
 geuzen-ux-panels-friends
 geuzen-ux-panels-photos

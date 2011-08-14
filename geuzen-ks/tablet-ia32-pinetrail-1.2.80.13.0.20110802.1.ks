@@ -22,14 +22,14 @@ repo --name=non-oss --baseurl=http://repo.meego.com/MeeGo/builds/1.2.80/@BUILD_I
 repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/i386/ --save
 
 repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_current_extras/ --save --debuginfo --source
-#repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source 
-#repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/meego_current_Core/ --save --debuginfo --source 
-#repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/MeeGo/current/ --save --source
+repo --name=berndhs-deploy --baseurl=http://repo.pub.meego.com/home:/earthling:/deploy/meego_current_Core/ --save --debuginfo --source 
+repo --name=berndhs-ux --baseurl=http://repo.pub.meego.com/home:/earthling:/ux/meego_current_Core/ --save --debuginfo --source 
+repo --name=berndhs-local --baseurl=http://berndhs.dyndns-home.com/Repos/Geuzen/MeeGo/current/ --save --source
 
 %packages
 
 @Core
-@Compliance
+#@Compliance
 @Common User Interface
 @Console Tools
 @Tablet
@@ -39,45 +39,45 @@ repo --name=berndhs --baseurl=http://repo.pub.meego.com/home:/earthling/meego_cu
 
 kernel-adaptation-pinetrail
 
-#-installer
-#instalateur
+-installer
+instalateur
 
 flash-plugin
 sensorfw-pegatron
 
 
-#-meego-ux-daemon
+-meego-ux-daemon
 
-#-meego-ux-panels-testpanel
-#-meego-ux-panels-music
-#-meego-ux-panels-video
-#-meego-ux-panels-web
-#-meego-ux-panels-mytablet
-#-meego-ux-panels-friends
-#-meego-ux-panels-photos
-#-meego-ux-panels-meta-tablet
+-meego-ux-panels-testpanel
+-meego-ux-panels-music
+-meego-ux-panels-video
+-meego-ux-panels-web
+-meego-ux-panels-mytablet
+-meego-ux-panels-friends
+-meego-ux-panels-photos
+-meego-ux-panels-meta-tablet
 
-#geuzen-ux-daemon
+geuzen-ux-daemon
 
-#geuzen-ux-panels-music
-#geuzen-ux-panels-video
-#geuzen-ux-panels-web
-#geuzen-ux-panels-mytablet
-#geuzen-ux-panels-friends
-#geuzen-ux-panels-photos
-#geuzen-ux-panels-meta-tablet
-#
-#-meego-ux-theme
-#geuzen-ux-theme
+geuzen-ux-panels-music
+geuzen-ux-panels-video
+geuzen-ux-panels-web
+geuzen-ux-panels-mytablet
+geuzen-ux-panels-friends
+geuzen-ux-panels-photos
+geuzen-ux-panels-meta-tablet
 
-#-generic-backgrounds
-#-netbook-backgrounds
-#-netbook-desktop-backgrounds
-#-desktop-backgrounds-basic
+-meego-ux-theme
+geuzen-ux-theme
 
-#geuzen-backgrounds
+-generic-backgrounds
+-netbook-backgrounds
+-netbook-desktop-backgrounds
+-desktop-backgrounds-basic
 
-#burid
+geuzen-backgrounds
+
+burid
 zypper
 gedit
 

@@ -20,7 +20,7 @@ if [ -e create.log ]; then
   mv -f create.log create.old.log
 fi
 START_TIME=$(date --utc)
-echo  "started " $START_TIME > create.log
+echo  "started " $START_TIME | tee create.log
 ( nice -5 sudo mic-image-creator \
 	--config=${TMPKS} \
         --format=livecd \
@@ -29,4 +29,4 @@ echo  "started " $START_TIME > create.log
 	--cache=mic_cache ) \
 	2>&1 | tee -a create.log
 FINISH_TIME=$(date --utc)
-echo  "finished " $FINISH_TIME >> create.log
+echo  "finished " $FINISH_TIME | tee -a create.log
